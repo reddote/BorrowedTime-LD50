@@ -1,0 +1,273 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &353923595499043732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 353923595499043734}
+  - component: {fileID: 353923595499043735}
+  - component: {fileID: 353923595499043737}
+  - component: {fileID: 1065794740632053827}
+  - component: {fileID: 1384902109555554697}
+  - component: {fileID: 4459462716272007143}
+  - component: {fileID: 1896882824}
+  - component: {fileID: 1896882825}
+  - component: {fileID: 1896882826}
+  - component: {fileID: 1896882827}
+  - component: {fileID: 1896882833}
+  - component: {fileID: 1896882834}
+  m_Layer: 0
+  m_Name: Ingame Mechanics
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &353923595499043734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353923595499043732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 556.2871, y: 418.3701, z: 8.878006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &353923595499043735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353923595499043732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2495d6110d25630438566ba96c50aacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnergyDeath: 'You died from exhaustion '
+  HungerDeath: You died from starvation
+  HeatDeath: You died from hypotermia
+  barManager: {fileID: 353923595499043737}
+  _health: 10
+  updateHealthEveryTick: 1
+  DeathReason: {fileID: 0}
+  SurviveTime: {fileID: 0}
+  surviveTimeText: You survived for {0} Better luck next time!
+--- !u!114 &353923595499043737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353923595499043732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e53430e5ba21d4ca56c02ede90282f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Energy: {fileID: 0}
+  _Hunger: {fileID: 0}
+  _Heat: {fileID: 0}
+  EnergyMax: 25
+  HungerMax: 25
+  HeatMax: 25
+  EnergyDropAmount: 1
+  HungerDropAmount: 1
+  HeatDropAmount: 1
+  EnergyGainAmount: 2
+  HungerGainAmount: 2
+  HeatGainAmount: 2
+  EnergyDropTick: 5
+  HungerDropTick: 3
+  HeatDropTick: 10
+  tiredClip: {fileID: 0}
+--- !u!114 &1065794740632053827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353923595499043732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c67a9dad9dd6f742b8a362149969a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GetColdAgainIn: 17
+  _isCold: 0
+  OnCold:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ColdEffectManager, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnWarm:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ColdEffectManager, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1384902109555554697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353923595499043732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c37eebf19bd2cb449ee18decbf1f3d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isHungry: 0
+  _isNotSleeping: 1
+  PlayerController: {fileID: 0}
+  SleepingController: {fileID: 0}
+  GetHungryAgainIn: 23
+--- !u!114 &4459462716272007143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353923595499043732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b9d25d0afc5f04dafdff31f21eaa86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameTickEverySecond: 1
+  timerText: {fileID: 0}
+--- !u!114 &1896882824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353923595499043732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ffaf0c983d34c4f94e29b5683b36f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThrowPower: 5
+  dices:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &1896882825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353923595499043732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0a11153eb271f419a006006cbe7cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DoorInteractable: {fileID: 0}
+  KazanInteractable: {fileID: 0}
+  SobaInteractable: {fileID: 0}
+  YatakInteractable: {fileID: 0}
+  WoodInteractable: {fileID: 0}
+  FoodInteractable: {fileID: 0}
+  sobaDiceLimit: 2
+  kazanDiceLimit: 2
+  doorDiceLimit: 2
+--- !u!114 &1896882826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353923595499043732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb100511713f7aa4c8e17f4edd89f34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wood: {fileID: 0}
+  _food: {fileID: 0}
+--- !u!114 &1896882827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353923595499043732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1266181569b654c81222958dc08c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndSceneList:
+  - {fileID: 0}
+  InGameList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &1896882833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353923595499043732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3351afbd01715042847c188eb03a663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  consumables:
+  - {fileID: 0}
+  - {fileID: 0}
+  min: 1
+  max: 2
+--- !u!114 &1896882834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353923595499043732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec000932194c9a540b04c09666b33b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTimeForRoll: 0.1
+  delayTimeForHide: 0.7
+  diceCamera: {fileID: 0}
+  diceButton: {fileID: 0}
+  text: {fileID: 0}
+  openUIAudio: {fileID: 8300000, guid: dece65142efe074478566905ad8a1405, type: 3}
